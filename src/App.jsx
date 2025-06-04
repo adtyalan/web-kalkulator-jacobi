@@ -10,33 +10,39 @@ const anggota = [
 
 function ArtikelJacobi() {
   return (
-    <div className="w-100% mx-auto p-6 bg-white rounded-lg shadow">
+    <div className="w-100% h-screen mx-auto p-6 bg-white rounded-lg shadow">
       <h2 className="text-xl font-bold mb-2">Penjelasan Metode Jacobi</h2>
-      <p className="mb-2">
-        <b>Metode Jacobi</b> adalah salah satu metode iteratif untuk
-        menyelesaikan sistem persamaan linear. Metode ini bekerja dengan menebak
-        solusi awal, lalu memperbaikinya secara bertahap hingga mendekati solusi
-        sebenarnya.
-      </p>
-      <ul className="list-disc ml-6 mb-2">
-        <li>
-          Setiap variabel dihitung berdasarkan nilai variabel lain pada iterasi
-          sebelumnya.
-        </li>
-        <li>
-          Proses diulang hingga perubahan antar iterasi lebih kecil dari
-          toleransi yang ditentukan.
-        </li>
-        <li>Metode ini cocok untuk matriks yang dominan diagonal.</li>
-      </ul>
-      <p>
-        <b>Langkah-langkah:</b>
-        <ol className="list-decimal ml-6">
-          <li>Tentukan tebakan awal untuk setiap variabel.</li>
-          <li>Hitung nilai variabel baru menggunakan persamaan Jacobi.</li>
-          <li>Ulangi hingga konvergen atau mencapai iterasi maksimum.</li>
-        </ol>
-      </p>
+      <div className="grid sm:grid-cols-2 gap-2">
+        <div className="border-1 border-gray-500 p-4 rounded-lg bg-gray-50 mb-4">
+          <p className="mb-2">
+            <b>Metode Jacobi</b> adalah salah satu metode iteratif untuk
+            menyelesaikan sistem persamaan linear. Metode ini bekerja dengan
+            menebak solusi awal, lalu memperbaikinya secara bertahap hingga
+            mendekati solusi sebenarnya.
+          </p>
+          <ul className="list-disc ml-6 mb-2">
+            <li>
+              Setiap variabel dihitung berdasarkan nilai variabel lain pada
+              iterasi sebelumnya.
+            </li>
+            <li>
+              Proses diulang hingga perubahan antar iterasi lebih kecil dari
+              toleransi yang ditentukan.
+            </li>
+            <li>Metode ini cocok untuk matriks yang dominan diagonal.</li>
+          </ul>
+        </div>
+        <div className="border-1 border-gray-500 p-4 rounded-lg bg-gray-50 mb-4">
+          <p>
+            <b>Langkah-langkah:</b>
+            <ol className="list-decimal ml-6">
+              <li>Tentukan tebakan awal untuk setiap variabel.</li>
+              <li>Hitung nilai variabel baru menggunakan persamaan Jacobi.</li>
+              <li>Ulangi hingga konvergen atau mencapai iterasi maksimum.</li>
+            </ol>
+          </p>
+        </div>
+      </div>
       <p className="mt-2 text-gray-600">
         Kelebihan Jacobi: sederhana, mudah diimplementasikan.
         <br />
@@ -77,7 +83,7 @@ export default function App() {
               </div>
               <ul>
                 {anggota.map((m) => (
-                  <li key={m.nim} className="mb-1">
+                  <li key={m.nim} className="mb-1 flex justify-between">
                     <span className="font-medium">{m.nama}</span>
                     <span className="text-gray-500 ml-2">{m.nim}</span>
                   </li>
